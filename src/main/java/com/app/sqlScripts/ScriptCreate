@@ -1,0 +1,14 @@
+CREATE DATABASE Sales;
+USE Sales;
+
+CREATE TABLE Sale (
+   sale_ID INT NOT NULL AUTO_INCREMENT,
+     sale_name VARCHAR(30) NOT NULL,
+        sale_last_name VARCHAR(30) NOT NULL,
+         sale_age SMALLINT NOT NULL,
+           sale_purchase_item ENUM('TV','SMARTPHONE','JUICER','HEADPHONES','KEYBOARD') DEFAULT NULL,
+             sale_count INT NOT NULL,
+                sale_amount FLOAT NOT NULL,
+                    sale_purchase_date DATE NOT NULL,
+                     PRIMARY KEY ( sale_ID)
+);

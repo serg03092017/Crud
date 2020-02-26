@@ -1,0 +1,24 @@
+<br>
+
+<head>
+    <title>Mistakes</title>
+    <style>
+        span {
+            color: #FF2F00;
+        }
+    </style>
+
+</head>
+<body>
+<b>Входные значения содержат следующие ошибки:</b>
+<br></br>
+
+{{#mistakes}}
+    <div>
+        <span>{{number}}:</span>
+        <span>{{mistake}}</span>
+    </div>
+{{/mistakes}}
+
+</body>
+</html>

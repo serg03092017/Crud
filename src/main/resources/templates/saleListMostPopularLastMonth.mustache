@@ -1,0 +1,21 @@
+<head>
+    <title>SalesListMostPopularLastMonth</title>
+    <style>
+        span {
+            color: #004bff;
+        }
+    </style>
+
+</head>
+<body>
+<b>Cамый покупаемый товар за последний месяц:</b>
+<br></br>
+
+{{#sales}}
+    <div>
+        <span>{{purchase_item}}</span>
+    </div>
+{{/sales}}
+
+</body>
+</html>

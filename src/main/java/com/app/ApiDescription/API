@@ -1,0 +1,55 @@
+controllerMapping:
+
+http://localhost:8080
+
+Methods                     Urls                                Actions
+
+---------------------------------------------------------------------------------------------------
+
+authentificateMapping:
+
+---------------------------------------------------------------------------------------------------
+
+POST						/j_spring_security_check			authentificate
+
+GET							/logout								logout
+
+---------------------------------------------------------------------------------------------------
+
+controllerMapping:
+
+---------------------------------------------------------------------------------------------------
+
+GET 						/api/sales?name={keyword}			find all Sales which contain keyword
+
+GET 						/api/sales							retrieve all Sales
+
+GET                         /api/sale/{id}                    	retrieve a Sale by :id
+
+POST                        /api/sale                           create new Sale
+
+PUT                         /api/sale/{id}                    	update a Sale by :id
+
+DELETE                      /api/sale/{id}                    	delete a Sale by :id
+
+DELETE                      /api/sales                          delete all Sales
+
+GET                         /api/sales/saleListLastWeek         retrieve a Sale List For a Last Week
+                                                                /*Вывести список покупок за последнюю неделю*/
+
+GET                         /api/sales/saleListLastWeek         retrieve a Sale List Most Popular Last Month
+                                                                /*Вывести список покупок за последнюю неделю*/
+
+GET                         /api/sales/saleListLastWeek         retrieve a Sale List For a Last Week
+                                                                /*Вывести список покупок за последнюю неделю*/
+
+GET                         /api/sales/saleListLastWeek         retrieve a Sale List For a Last Week
+                                                                /*Вывести список покупок за последнюю неделю*/													
+---------------------------------------------------------------------------------------------------
+
+otherMapping:
+
+---------------------------------------------------------------------------------------------------
+GET
+
+403Page,_menu, adminPage, error, logoutSuccessfulPage, main, mistakes, userInfoPage, ??welcomePage??

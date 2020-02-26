@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="sale">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="name"/>
+                <xs:element type="xs:string" name="lastName"/>
+                <xs:element type="xs:int" name="age"/>
+                <xs:element name="purchase_item" type="purchase_itemEnum"/>
+                <xs:element type="xs:int" name="count"/>
+                <xs:element type="xs:float" name="amount"/>
+                <xs:element name="purchase_date" type="xs:date"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="purchase_itemEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="TV"/>
+            <xs:enumeration value="SMARTPHONE"/>
+            <xs:enumeration value="JUICER"/>
+            <xs:enumeration value="HEADPHONES"/>
+            <xs:enumeration value="KEYBOARD"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

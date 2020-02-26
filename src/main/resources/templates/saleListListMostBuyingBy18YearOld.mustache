@@ -1,0 +1,21 @@
+<head>
+    <title>SaleListMostBuyingBy18YearOld</title>
+    <style>
+        span {
+            color: #004bff;
+        }
+    </style>
+
+</head>
+<body>
+<b>Чаще всего покупают люди в возрасте 18 лет:</b>
+<br></br>
+
+{{#sales}}
+    <div>
+        <span>{{purchase_item}}</span>
+    </div>
+{{/sales}}
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+CREATE DATABASE Sales;
+USE Sales;
+
+CREATE TABLE Sale (
+   sale_ID INT NOT NULL AUTO_INCREMENT,
+     sale_name VARCHAR(30) NOT NULL,
+        sale_last_name VARCHAR(30) NOT NULL,
+         sale_age SMALLINT NOT NULL,
+           sale_purchase_item ENUM('TV','SMARTPHONE','JUICER','HEADPHONES','KEYBOARD') DEFAULT NULL,
+             sale_count INT NOT NULL,
+                sale_amount FLOAT NOT NULL,
+                    sale_purchase_date DATE NOT NULL,
+                     PRIMARY KEY ( sale_ID)
+);
+/*
+Добавление дат, фамилий, покупок на прошлый месяц для списка покупок за полгода
+для: Вывести имя и фамилию человека, совершившего больше всего покупок за полгода
+*/
+
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper', 18, 'SMARTPHONE', 40, 44.3, DATE_SUB(curdate(),Interval 1 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper', 18, 'SMARTPHONE', 40, 44.3, DATE_SUB(curdate(),Interval 2 week));
+
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Cooper', 18, 'KEYBOARD', 40, 44.3, DATE_SUB(curdate(),Interval 3 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Cooper', 18, 'HEADPHONES', 40, 44.3, DATE_SUB(curdate(),Interval 4 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Cooper', 18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 4 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Cooper', 18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 7 Month));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Cooper', 18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 8 Month));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Cooper', 18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 9 Month));
+
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Spencer', 18, 'KEYBOARD', 40, 44.3, DATE_SUB(curdate(),Interval 3 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Spencer', 18, 'HEADPHONES', 40, 44.3, DATE_SUB(curdate(),Interval 4 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Spencer', 18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 4 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Spencer', 18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 4 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Spencer', 18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 7 Month));
+
+SELECT sale_name, sale_last_name FROM sales.sale
+WHERE sale_purchase_date >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH)
+AND sale_purchase_date <= CURDATE()
+GROUP BY sale_name, sale_last_name
+HAVING COUNT(sale_name) =
+(SELECT MAX(cf_num)
+           FROM (
+          SELECT COUNT(sale_name), COUNT(sale_last_name) AS cf_num FROM sales.sale
+          WHERE sale_purchase_date >= DATE_SUB(curdate(), INTERVAL 6 MONTH)
+			AND sale_purchase_date <= CURDATE()
+			GROUP BY sale_name, sale_last_name
+              ) t1 )

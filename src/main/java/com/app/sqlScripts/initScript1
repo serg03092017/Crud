@@ -1,0 +1,39 @@
+CREATE DATABASE Sales;
+USE Sales;
+
+CREATE TABLE Sale (
+   sale_ID INT NOT NULL AUTO_INCREMENT,
+     sale_name VARCHAR(30) NOT NULL,
+        sale_last_name VARCHAR(30) NOT NULL,
+         sale_age SMALLINT NOT NULL,
+           sale_purchase_item ENUM('TV','SMARTPHONE','JUICER','HEADPHONES','KEYBOARD') DEFAULT NULL,
+             sale_count INT NOT NULL,
+                sale_amount FLOAT NOT NULL,
+                    sale_purchase_date DATE NOT NULL,
+                     PRIMARY KEY ( sale_ID)
+);
+/*
+Добавление дат на прошлую неделю для списка покупок за неделю
+для: - Вывести список покупок за последнюю неделю
+*/
+
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper', 18, 'SMARTPHONE', 40, 44.3, DATE_SUB(curdate(),Interval 1 Day));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper',  18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 3 Day));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper', 18, 'HEADPHONES', 40, 44.3, DATE_SUB(curdate(),Interval 5 Day));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper', 18, 'SMARTPHONE', 40, 44.3, DATE_SUB(curdate(),Interval 1 Day));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper', 18, 'SMARTPHONE', 40, 44.3, DATE_SUB(curdate(),Interval 10 Day));
+
+/*
+Вывести список покупок за последнюю неделю
+*/
+
+SELECT sale_purchase_item FROM sales.sale
+WHERE `sale_purchase_date` >= DATE_SUB(curdate(), Interval 7 Day)
+AND `sale_purchase_date` <= curdate()
+ORDER BY 'sale_purchase_date'
+LIMIT 100

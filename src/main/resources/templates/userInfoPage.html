@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Info</title>
+</head>
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+
+<h2>User Info Page</h2>
+<h3>Welcome : <span th:utext="${#request.userPrincipal.name}"></span></h3>
+<b>This is protected page!</b>
+
+<br/><br/>
+
+<div th:if="${userInfo != null}" th:utext="${userInfo}"></div>
+
+<br/><br/>
+
+<a href="/api/sales">Таблица покупок</a>
+
+<br/><br/>
+
+<a href="/api/saleListForLastWeek">Cписок покупок за последнюю неделю</a>
+
+<br/><br/>
+
+<a href="/api/saleListMostPopularLastMonth">Cамый покупаемый товар за последний месяц</a>
+
+<br/><br/>
+
+<a href="api/saleListBuyingNameAndLastNameLastHalfAYear">Человек, совершивший больше всего покупок за полгода</a>
+
+<br/><br/>
+
+<a href="/api/saleListListMostBuyingBy18YearOld">Чаще всего покупают люди в возрасте 18 лет</a>
+
+</body>
+
+</html>

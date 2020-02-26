@@ -1,0 +1,54 @@
+CREATE DATABASE Sales;
+USE Sales;
+
+CREATE TABLE Sale (
+   sale_ID INT NOT NULL AUTO_INCREMENT,
+     sale_name VARCHAR(30) NOT NULL,
+        sale_last_name VARCHAR(30) NOT NULL,
+         sale_age SMALLINT NOT NULL,
+           sale_purchase_item ENUM('TV','SMARTPHONE','JUICER','HEADPHONES','KEYBOARD') DEFAULT NULL,
+             sale_count INT NOT NULL,
+                sale_amount FLOAT NOT NULL,
+                    sale_purchase_date DATE NOT NULL,
+                     PRIMARY KEY ( sale_ID)
+);
+
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper', 18, 'SMARTPHONE', 40, 44.3, DATE_SUB(curdate(),Interval 1 Day));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper',  18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 3 Day));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper', 18, 'HEADPHONES', 40, 44.3, DATE_SUB(curdate(),Interval 5 Day));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper', 18, 'SMARTPHONE', 40, 44.3, DATE_SUB(curdate(),Interval 1 Day));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper', 18, 'SMARTPHONE', 40, 44.3, DATE_SUB(curdate(),Interval 10 Day));
+
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper', 18, 'SMARTPHONE', 40, 44.3, DATE_SUB(curdate(),Interval 1 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Sam', 'Cooper', 18, 'SMARTPHONE', 40, 44.3, DATE_SUB(curdate(),Interval 2 week));
+
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Cooper', 18, 'KEYBOARD', 40, 44.3, DATE_SUB(curdate(),Interval 3 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Cooper', 18, 'HEADPHONES', 40, 44.3, DATE_SUB(curdate(),Interval 4 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Cooper', 18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 4 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Cooper', 18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 7 Month));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Cooper', 18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 8 Month));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Cooper', 18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 9 Month));
+
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Spencer', 18, 'KEYBOARD', 40, 44.3, DATE_SUB(curdate(),Interval 3 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Spencer', 18, 'HEADPHONES', 40, 44.3, DATE_SUB(curdate(),Interval 4 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Spencer', 18, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 4 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Spencer', 19, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 4 week));
+INSERT INTO sale (sale_name, sale_last_name, sale_age, sale_purchase_item, sale_count, sale_amount, sale_purchase_date)
+VALUES ('Tom', 'Spencer', 20, 'TV', 40, 44.3, DATE_SUB(curdate(),Interval 7 Month));

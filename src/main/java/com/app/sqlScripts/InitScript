@@ -1,0 +1,8 @@
+insert into sale (saleID, name, lastName, purchase_item, count, amount, purchase_date)
+values (1, '33', '33', 'SMARTPHONE', 30, 33.5, Str_To_Date('17-11-1981', '%d-%m-%Y'));
+insert into sale (saleID, name, lastName, purchase_item, count, amount, purchase_date)
+values (2, 'Sam', 'Cooper', 'SMARTPHONE', 40, 44.3, Str_To_Date('17-12-1982', '%d-%m-%Y'));
+insert into sale (saleID, name, lastName, purchase_item, count, amount, purchase_date)
+values (5, 'Tom', 'Spencer', 'HEADPHONES', 50, 55.7, Str_To_Date('11-11-1980', '%d-%m-%Y'));
+INSERT INTO sale (saleID, name, lastName, purchase_item, count, amount, purchase_date)
+VALUES (2, 'Sam', 'Cooper', 'SMARTPHONE', 40, 44.3, Str_To_Date(curdate(), '%d-%m-%Y'));

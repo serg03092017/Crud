@@ -1,0 +1,21 @@
+<head>
+    <title>SalesListForLastWeek</title>
+    <style>
+        span {
+            color: #004bff;
+        }
+    </style>
+
+</head>
+<body>
+<b>Cписок покупок за последнюю неделю:</b>
+<br></br>
+
+{{#sales}}
+    <div>
+        <span>{{purchase_item}}</span>
+    </div>
+{{/sales}}
+
+</body>
+</html>
